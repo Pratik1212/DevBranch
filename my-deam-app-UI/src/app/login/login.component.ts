@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, AuthenticationService } from '../_services';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -17,7 +17,9 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService) {}
+        private alertService: AlertService,
+        private toastr: ToastrService
+    ) {}
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -51,7 +53,11 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
+                   // this.alertService.error(error);
+                   // this.toastr.error('Eerror', error);
+                    this.toastr.error('', error, {
+                        timeOut: 3000, toastClass: ''
+                      });
                     this.loading = false;
                 });
     }

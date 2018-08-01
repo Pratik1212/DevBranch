@@ -1,8 +1,9 @@
 ﻿<!-- main app container -->
+<nav-bar *ngIf="authenticationService.isAuthoriseUser()"></nav-bar>
 <div class="jumbotron">
-    <div class="container">
+    <div class="container">         
         <div class="row">
-            <div class="col-sm-6 offset-sm-3">
+            <div class="col-sm-12">                
                 <alert></alert>
                 <router-outlet></router-outlet>
             </div>
