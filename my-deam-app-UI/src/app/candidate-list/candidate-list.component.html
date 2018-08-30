@@ -1,0 +1,70 @@
+<!-- <ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul> -->
+
+<div *ngFor="let user of users">
+    <div class="row img-thumbnail">
+        <div class="col-sm-3" style="background-color:lavender;">
+            <img src="../../assets/profileImages/default_male.png" class="rounded-circle" style="height:200; width: 200px;" alt="Sample Image">
+        </div>
+        <div class="col-sm-7" style="background-color:lavender;">
+            <!-- <h5> {{user.username}} ({{user.firstName}} {{user.lastName}}) -</h5> -->
+            <div class="my-1">
+                <h6>Name : Pratik P Nikate</h6>
+                <h6> DOB : 12/12/1988</h6>
+            </div>
+        </div>
+        <div class="col-sm-2" style="background-color:lavender;">
+            <!-- <a (click)="deleteUser(user.id)" class="btn btn-primary">Delete</a> -->
+            <div>
+                <a href="#" class="btn btn-primary my-1">View Profile</a>
+            </div>
+            <div>
+                <a href="#" class="btn btn-primary my-1">Add to Favourite</a>
+            </div>
+        </div>
+        <!-- <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>            -->
+        <!-- <div class="img-thumbnail">
+                <div class="col-md-3">
+                    <img src="../../assets/profileImages/default_male.png" class="rounded-circle" alt="Sample Image">
+                </div>
+                <div class="col-md-9">
+                    <div class="caption">
+                        <h3>{{user.username}} ({{user.firstName}} {{user.lastName}}) -</h3>
+                        <p> SPLessons stands for Simple Programming Lessons and was started with an intention to help developers
+                            all around the globe by presenting programming codes with different queries in different programming
+                            languages.
+                        </p>
+                        <p>
+                            <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+                            <a href="#" class="btn btn-default">Follow</a>
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="img-thumbnail">
+            <img src="splessons.jpg" alt="Sample Image">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p> SPLessons stands for Simple Programming Lessons and was started with an intention to help developers all
+                    around the globe by presenting programming codes with different queries in different programming languages.</p>
+                <p>
+                    <a href="#" class="btn btn-primary">Share</a>
+                    <a href="#" class="btn btn-default">Follow</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    <a [routerLink]="['/login']">Logout</a>
+</p>
